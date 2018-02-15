@@ -1,13 +1,17 @@
-Hash: bb44149cc6ff44057a6db39ed0896245106f412b
+Hash: 40b9288c7b06181fe56c92fc98986ee18223c384
 Child
-    Hash: bb44149cc6ff44057a6d
+    Hash: 40b9288c7b06181fe56c
     Time: Xms
+    Built at: Thu Jan 01 1970 00:00:00 GMT
       Asset      Size  Chunks             Chunk Names
-    main.js  2.62 KiB       0  [emitted]  main
+    main.js  2.63 KiB       0  [emitted]  main
+    Entrypoint main = main.js
        [0] ./index.js 24 bytes {0} [built]
 Child
-    Hash: b39ed0896245106f412b
+    Hash: 92fc98986ee18223c384
     Time: Xms
+    Built at: Thu Jan 01 1970 00:00:00 GMT
       Asset      Size  Chunks             Chunk Names
-    main.js  2.62 KiB       0  [emitted]  main
+    main.js  2.63 KiB       0  [emitted]  main
+    Entrypoint main = main.js
        [0] ./index.js 24 bytes {0} [built]

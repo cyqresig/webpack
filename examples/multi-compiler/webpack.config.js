@@ -1,12 +1,13 @@
 var path = require("path");
 var webpack = require("../../");
 module.exports = [
+
 	{
 		name: "mobile",
 		// mode: "development || "production",
 		entry: "./example",
 		output: {
-			path: path.join(__dirname, "js"),
+			path: path.join(__dirname, "dist"),
 			filename: "mobile.js"
 		},
 		plugins: [
@@ -15,12 +16,13 @@ module.exports = [
 			})
 		]
 	},
+
 	{
 		name: "desktop",
 		// mode: "development || "production",
 		entry: "./example",
 		output: {
-			path: path.join(__dirname, "js"),
+			path: path.join(__dirname, "dist"),
 			filename: "desktop.js"
 		},
 		plugins: [
@@ -29,4 +31,5 @@ module.exports = [
 			})
 		]
 	}
+
 ];

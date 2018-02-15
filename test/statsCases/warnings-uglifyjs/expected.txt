@@ -1,7 +1,9 @@
-Hash: f6eb3b161149e35ef9e6
+Hash: 646a540e1a95f55e1b8c
 Time: Xms
+Built at: Thu Jan 01 1970 00:00:00 GMT
     Asset      Size  Chunks             Chunk Names
 bundle.js  2.19 KiB       0  [emitted]  main
+Entrypoint main = bundle.js
    [0] ./index.js 299 bytes {0} [built]
    [1] ./a.js 249 bytes {0} [built]
    [2] (webpack)/buildin/module.js 495 bytes {0} [built]

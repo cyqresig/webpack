@@ -1,5 +1,8 @@
-Hash: e205648cbd984b752d24
+Hash: 8ea520d39e2a8caaf145
 Time: Xms
+Built at: Thu Jan 01 1970 00:00:00 GMT
+Entrypoint index = index.js
+Entrypoint entry = entry.js
    [0] ./entry.js 32 bytes {0} {1} [built]
        ModuleConcatenation bailout: Module is an entry point
    [1] ./ref-from-cjs.js 45 bytes {0} [built]

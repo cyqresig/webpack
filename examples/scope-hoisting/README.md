@@ -114,7 +114,7 @@ module.exports = {
 
 
 
-# js/output.js
+# dist/output.js
 
 <details><summary><code>/******/ (function(modules) { /* webpackBootstrap */ })</code></summary>
 
@@ -122,10 +122,12 @@ module.exports = {
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// install a JSONP callback for chunk loading
 /******/ 	function webpackJsonpCallback(data) {
-/******/ 		var chunkIds = data[0], moreModules = data[1], executeModules = data[2];
+/******/ 		var chunkIds = data[0];
+/******/ 		var moreModules = data[1]
+/******/
 /******/ 		// add "moreModules" to the modules object,
 /******/ 		// then flag all "chunkIds" as loaded and fire callback
-/******/ 		var moduleId, chunkId, i = 0, resolves = [], result;
+/******/ 		var moduleId, chunkId, i = 0, resolves = [];
 /******/ 		for(;i < chunkIds.length; i++) {
 /******/ 			chunkId = chunkIds[i];
 /******/ 			if(installedChunks[chunkId]) {
@@ -145,6 +147,7 @@ module.exports = {
 /******/
 /******/ 	};
 /******/
+/******/
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -153,7 +156,7 @@ module.exports = {
 /******/ 		1: 0
 /******/ 	};
 /******/
-/******/ 	var scheduledModules = [];
+/******/
 /******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
@@ -203,6 +206,7 @@ module.exports = {
 /******/ 				// start chunk loading
 /******/ 				var head = document.getElementsByTagName('head')[0];
 /******/ 				var script = document.createElement('script');
+/******/
 /******/ 				script.charset = 'utf-8';
 /******/ 				script.timeout = 120000;
 /******/
@@ -272,16 +276,18 @@ module.exports = {
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "js/";
+/******/ 	__webpack_require__.p = "dist/";
 /******/
 /******/ 	// on error function for async loading
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
 /******/
 /******/ 	var jsonpArray = window["webpackJsonp"] = window["webpackJsonp"] || [];
-/******/ 	var parentJsonpFunction = jsonpArray.push.bind(jsonpArray);
+/******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
 /******/ 	jsonpArray.push = webpackJsonpCallback;
 /******/ 	jsonpArray = jsonpArray.slice();
 /******/ 	for(var i = 0; i < jsonpArray.length; i++) webpackJsonpCallback(jsonpArray[i]);
+/******/ 	var parentJsonpFunction = oldJsonpFunction;
+/******/
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 1);
@@ -346,7 +352,7 @@ function b_a() {
 
 
 
-__webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, /*! ./lazy */3)).then(function(lazy) {
+__webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./lazy */ 3)).then(function(lazy) {
 	console.log(a, b_a(), shared["a" /* x */], shared["b" /* y */], lazy.c, lazy.d.a, lazy.x, lazy.y);
 });
 
@@ -355,7 +361,7 @@ __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, /*! .
 /******/ ]);
 ```
 
-# js/0.output.js
+# dist/0.output.js
 
 ``` javascript
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[0],[
@@ -391,7 +397,6 @@ __webpack_require__.d(d_namespaceObject, "a", function() { return a; });
 
 // EXTERNAL MODULE: ./node_modules/cjs.js
 var cjs = __webpack_require__(2);
-var cjs_default = /*#__PURE__*/__webpack_require__.n(cjs);
 
 // EXTERNAL MODULE: ./node_modules/shared.js + 1 modules
 var shared = __webpack_require__(0);
@@ -434,13 +439,13 @@ Minimized
 
 ```
 Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack next
+Version: webpack 4.0.0-beta.1
       Asset      Size  Chunks             Chunk Names
-0.output.js  1.84 KiB       0  [emitted]  
-  output.js  8.15 KiB       1  [emitted]  main
+0.output.js  1.78 KiB       0  [emitted]  
+  output.js   8.2 KiB       1  [emitted]  main
 Entrypoint main = output.js
-chunk    {0} 0.output.js 286 bytes {1} [rendered]
-    > [] 4:0-16
+chunk    {0} 0.output.js 286 bytes <{1}> [rendered]
+    > ./lazy [] 4:0-16
     [3] ./lazy.js + 2 modules 242 bytes {0} [built]
         [exports: d, c, x, y]
         import() ./lazy  ./example.js 4:0-16
@@ -449,8 +454,8 @@ chunk    {0} 0.output.js 286 bytes {1} [rendered]
         |    import() ./lazy  ./example.js 4:0-16
         |     + 2 hidden modules
      + 1 hidden module
-chunk    {1} output.js (main) 390 bytes [entry] [rendered]
-    > main [] 
+chunk    {1} output.js (main) 390 bytes >{0}< [entry] [rendered]
+    > .\example.js main
     [0] ./node_modules/shared.js + 1 modules 105 bytes {1} [built]
         [exports: x, y]
         [only some exports used: x, y]
@@ -473,13 +478,13 @@ chunk    {1} output.js (main) 390 bytes [entry] [rendered]
 
 ```
 Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack next
+Version: webpack 4.0.0-beta.1
       Asset       Size  Chunks             Chunk Names
 0.output.js  362 bytes       0  [emitted]  
   output.js    1.8 KiB       1  [emitted]  main
 Entrypoint main = output.js
-chunk    {0} 0.output.js 286 bytes {1} [rendered]
-    > [] 4:0-16
+chunk    {0} 0.output.js 286 bytes <{1}> [rendered]
+    > ./lazy [] 4:0-16
     [3] ./lazy.js + 2 modules 242 bytes {0} [built]
         [exports: d, c, x, y]
         import() ./lazy  ./example.js 4:0-16
@@ -488,8 +493,8 @@ chunk    {0} 0.output.js 286 bytes {1} [rendered]
         |    import() ./lazy  ./example.js 4:0-16
         |     + 2 hidden modules
      + 1 hidden module
-chunk    {1} output.js (main) 390 bytes [entry] [rendered]
-    > main [] 
+chunk    {1} output.js (main) 390 bytes >{0}< [entry] [rendered]
+    > .\example.js main
     [0] ./node_modules/shared.js + 1 modules 105 bytes {1} [built]
         [exports: x, y]
         [only some exports used: x, y]

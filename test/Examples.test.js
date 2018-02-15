@@ -32,10 +32,8 @@ describe("Examples", () => {
 				options.context = examplePath;
 				options.output = options.output || {};
 				options.output.pathinfo = true;
-				options.output.path = path.join(examplePath, "js");
-				options.output.publicPath = "js/";
-				if(!options.output.filename)
-					options.output.filename = "output.js";
+				options.output.path = path.join(examplePath, "dist");
+				options.output.publicPath = "dist/";
 				if(!options.entry)
 					options.entry = "./example.js";
 				if(!options.plugins)

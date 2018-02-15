@@ -32,22 +32,22 @@
 {{pageA.html}}
 ```
 
-# js/commons.js
+# dist/pageA~pageB.chunk.js
 
 ``` javascript
-{{js/commons.js}}
+{{dist/pageA~pageB.chunk.js}}
 ```
 
-# js/pageA.bundle.js
+# dist/pageA.bundle.js
 
 ``` javascript
-{{js/pageA.bundle.js}}
+{{dist/pageA.bundle.js}}
 ```
 
-# js/1.chunk.js
+# dist/aPage.chunk.js
 
 ``` javascript
-{{js/1.chunk.js}}
+{{dist/aPage.chunk.js}}
 ```
 
 # Info

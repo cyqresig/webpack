@@ -54,7 +54,7 @@ require(
 );
 ```
 
-# js/output.js
+# dist/output.js
 
 <details><summary><code>/******/ (function(modules) { /* webpackBootstrap */ })</code></summary>
 
@@ -62,10 +62,12 @@ require(
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// install a JSONP callback for chunk loading
 /******/ 	function webpackJsonpCallback(data) {
-/******/ 		var chunkIds = data[0], moreModules = data[1], executeModules = data[2];
+/******/ 		var chunkIds = data[0];
+/******/ 		var moreModules = data[1]
+/******/
 /******/ 		// add "moreModules" to the modules object,
 /******/ 		// then flag all "chunkIds" as loaded and fire callback
-/******/ 		var moduleId, chunkId, i = 0, resolves = [], result;
+/******/ 		var moduleId, chunkId, i = 0, resolves = [];
 /******/ 		for(;i < chunkIds.length; i++) {
 /******/ 			chunkId = chunkIds[i];
 /******/ 			if(installedChunks[chunkId]) {
@@ -85,6 +87,7 @@ require(
 /******/
 /******/ 	};
 /******/
+/******/
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -93,7 +96,7 @@ require(
 /******/ 		1: 0
 /******/ 	};
 /******/
-/******/ 	var scheduledModules = [];
+/******/
 /******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
@@ -143,6 +146,7 @@ require(
 /******/ 				// start chunk loading
 /******/ 				var head = document.getElementsByTagName('head')[0];
 /******/ 				var script = document.createElement('script');
+/******/
 /******/ 				script.charset = 'utf-8';
 /******/ 				script.timeout = 120000;
 /******/
@@ -212,16 +216,18 @@ require(
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "js/";
+/******/ 	__webpack_require__.p = "dist/";
 /******/
 /******/ 	// on error function for async loading
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
 /******/
 /******/ 	var jsonpArray = window["webpackJsonp"] = window["webpackJsonp"] || [];
-/******/ 	var parentJsonpFunction = jsonpArray.push.bind(jsonpArray);
+/******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
 /******/ 	jsonpArray.push = webpackJsonpCallback;
 /******/ 	jsonpArray = jsonpArray.slice();
 /******/ 	for(var i = 0; i < jsonpArray.length; i++) webpackJsonpCallback(jsonpArray[i]);
+/******/ 	var parentJsonpFunction = oldJsonpFunction;
+/******/
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 3);
@@ -262,10 +268,10 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// AMD Module Fo
 module.exports = 123;
 
 // but you can use amd style requires
-Promise.resolve().then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ./amd */ 0), __webpack_require__(/*! ./harmony */ 2)]; ((function(amd1, harmony) {
+Promise.resolve(/*! AMD require */).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ./amd */ 0), __webpack_require__(/*! ./harmony */ 2)]; (function(amd1, harmony) {
 		var amd2 = __webpack_require__(/*! ./amd */ 0);
 		var harmony2 = __webpack_require__(/*! ./harmony */ 2);
-	}).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}).catch(__webpack_require__.oe);
+	}).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__);}).catch(__webpack_require__.oe);
 
 /***/ }),
 /* 2 */
@@ -277,9 +283,9 @@ Promise.resolve().then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpa
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _commonjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./commonjs */1);
+/* harmony import */ var _commonjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./commonjs */ 1);
 /* harmony import */ var _commonjs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_commonjs__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _amd__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./amd */0);
+/* harmony import */ var _amd__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./amd */ 0);
 /* harmony import */ var _amd__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_amd__WEBPACK_IMPORTED_MODULE_1__);
 // ES6 Modules
 
@@ -302,19 +308,19 @@ var amd1 = __webpack_require__(/*! ./amd */ 0);
 var harmony1 = __webpack_require__(/*! ./harmony */ 2);
 
 // AMD-style requires (with all webpack features)
-__webpack_require__.e/* require */(0).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [
+__webpack_require__.e(/*! AMD require */ 0).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [
 	__webpack_require__(/*! ./commonjs */ 1), __webpack_require__(/*! ./amd */ 0),
-	__webpack_require__(/*! ../require.context/templates */ 4)("./"+amd1+".js"),
-	Math.random() < 0.5 ? __webpack_require__(/*! ./commonjs */ 1) : __webpack_require__(/*! ./amd */ 0)]; ((function(commonjs2, amd2, template, randModule) {
+	__webpack_require__(4)("./"+amd1+".js"),
+	Math.random() < 0.5 ? __webpack_require__(/*! ./commonjs */ 1) : __webpack_require__(/*! ./amd */ 0)]; (function(commonjs2, amd2, template, randModule) {
 		// Do something with it...
-	}).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}).catch(__webpack_require__.oe);
+	}).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__);}).catch(__webpack_require__.oe);
 
 
 /***/ })
 /******/ ]);
 ```
 
-# js/0.output.js
+# dist/0.output.js
 
 ``` javascript
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[0],[
@@ -343,8 +349,11 @@ function webpackContext(req) {
 }
 function webpackContextResolve(req) {
 	var id = map[req];
-	if(!(id + 1)) // check for number or string
-		throw new Error("Cannot find module '" + req + "'.");
+	if(!(id + 1)) { // check for number or string
+		var e = new Error('Cannot find module "' + req + '".');
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
 	return id;
 }
 webpackContext.keys = function webpackContextKeys() {
@@ -400,12 +409,12 @@ module.exports = function() {
 
 ```
 Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack next
+Version: webpack 4.0.0-beta.1
       Asset      Size  Chunks             Chunk Names
-0.output.js  1.82 KiB       0  [emitted]  
-  output.js  9.73 KiB       1  [emitted]  main
+0.output.js  1.87 KiB       0  [emitted]  
+  output.js  9.76 KiB       1  [emitted]  main
 Entrypoint main = output.js
-chunk    {0} 0.output.js 439 bytes {1} [rendered]
+chunk    {0} 0.output.js 439 bytes <{1}> [rendered]
     > [3] ./example.js 7:0-14:1
     [4] ../require.context/templates sync ^\.\/.*\.js$ 193 bytes {0} [built]
         amd require context ../require.context/templates [3] ./example.js 7:0-14:1
@@ -415,8 +424,8 @@ chunk    {0} 0.output.js 439 bytes {1} [rendered]
         context element ./b.js [4] ../require.context/templates sync ^\.\/.*\.js$ ./b.js
     [7] ../require.context/templates/a.js 82 bytes {0} [optional] [built]
         context element ./a.js [4] ../require.context/templates sync ^\.\/.*\.js$ ./a.js
-chunk    {1} output.js (main) 1.03 KiB [entry] [rendered]
-    > main [3] ./example.js 
+chunk    {1} output.js (main) 1.03 KiB >{0}< [entry] [rendered]
+    > .\example.js main
     [0] ./amd.js 309 bytes {1} [built]
         amd require ./amd [1] ./commonjs.js 5:0-11:1
         cjs require ./amd [1] ./commonjs.js 8:13-29
@@ -446,12 +455,12 @@ chunk    {1} output.js (main) 1.03 KiB [entry] [rendered]
 
 ```
 Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack next
+Version: webpack 4.0.0-beta.1
       Asset       Size  Chunks             Chunk Names
-0.output.js  571 bytes       0  [emitted]  
+0.output.js  606 bytes       0  [emitted]  
   output.js   2.04 KiB       1  [emitted]  main
 Entrypoint main = output.js
-chunk    {0} 0.output.js 439 bytes {1} [rendered]
+chunk    {0} 0.output.js 439 bytes <{1}> [rendered]
     > [3] ./example.js 7:0-14:1
     [4] ../require.context/templates sync ^\.\/.*\.js$ 193 bytes {0} [built]
         amd require context ../require.context/templates [3] ./example.js 7:0-14:1
@@ -461,8 +470,8 @@ chunk    {0} 0.output.js 439 bytes {1} [rendered]
         context element ./b.js [4] ../require.context/templates sync ^\.\/.*\.js$ ./b.js
     [7] ../require.context/templates/a.js 82 bytes {0} [optional] [built]
         context element ./a.js [4] ../require.context/templates sync ^\.\/.*\.js$ ./a.js
-chunk    {1} output.js (main) 1.03 KiB [entry] [rendered]
-    > main [3] ./example.js 
+chunk    {1} output.js (main) 1.03 KiB >{0}< [entry] [rendered]
+    > .\example.js main
     [0] ./amd.js 309 bytes {1} [built]
         amd require ./amd [1] ./commonjs.js 5:0-11:1
         cjs require ./amd [1] ./commonjs.js 8:13-29

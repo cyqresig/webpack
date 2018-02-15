@@ -23,7 +23,7 @@ if(a == a2) throw new Error("Cache clear failed :(");
 module.exports = Math.random();
 ```
 
-# js/output.js
+# dist/output.js
 
 <details><summary><code>/******/ (function(modules) { /* webpackBootstrap */ })</code></summary>
 
@@ -92,7 +92,8 @@ module.exports = Math.random();
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "js/";
+/******/ 	__webpack_require__.p = "dist/";
+/******/
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 0);
@@ -145,12 +146,12 @@ module.exports = Math.random();
 
 ```
 Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack next
+Version: webpack 4.0.0-beta.1
     Asset      Size  Chunks             Chunk Names
-output.js  3.25 KiB       0  [emitted]  main
+output.js  3.26 KiB       0  [emitted]  main
 Entrypoint main = output.js
 chunk    {0} output.js (main) 326 bytes [entry] [rendered]
-    > main [0] ./example.js 
+    > .\example.js main
     [0] ./example.js 295 bytes {0} [built]
         single entry .\example.js  main
     [1] ./a.js 31 bytes {0} [built]
@@ -163,12 +164,12 @@ chunk    {0} output.js (main) 326 bytes [entry] [rendered]
 
 ```
 Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack next
+Version: webpack 4.0.0-beta.1
     Asset       Size  Chunks             Chunk Names
-output.js  665 bytes       0  [emitted]  main
+output.js  667 bytes       0  [emitted]  main
 Entrypoint main = output.js
 chunk    {0} output.js (main) 326 bytes [entry] [rendered]
-    > main [1] ./example.js 
+    > .\example.js main
     [0] ./a.js 31 bytes {0} [built]
         require.resolve ./a.js [1] ./example.js 4:10-35
         cjs require ./a [1] ./example.js 1:8-22

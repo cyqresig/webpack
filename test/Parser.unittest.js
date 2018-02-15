@@ -112,6 +112,22 @@ describe("Parser", () => {
 				fgh.sub;
 			}, {}
 		],
+		"class definition": [
+			function() {
+				class memberExpr {
+					cde() {
+						abc("cde");
+					}
+					static fgh() {
+						abc("fgh");
+						fgh();
+					}
+				}
+			}, {
+				abc: ["cde", "fgh"],
+				fgh: ["memberExpr"]
+			}
+		],
 		"in try": [
 			function() {
 				try {
@@ -201,6 +217,15 @@ describe("Parser", () => {
 				xyz: ["membertest"]
 			}
 		],
+		"spread calls/literals": [
+			function() {
+				var xyz = [...abc("xyz"), cde];
+				Math.max(...fgh);
+			}, {
+				abc: ["xyz"],
+				fgh: ["xyz"]
+			}
+		]
 	};
 	/* eslint-enable no-undef */
 	/* eslint-enable no-unused-vars */
@@ -461,8 +486,8 @@ describe("Parser", () => {
 						param: "y"
 					}
 				],
-				"System.import": [
-					"async function x() { const y = await System.import('z'); }", {
+				"import": [
+					"async function x() { const y = await import('z'); }", {
 						param: "z"
 					}
 				]
@@ -473,7 +498,7 @@ describe("Parser", () => {
 				const param = parser.evaluateExpression(expr.arguments[0]);
 				parser.state.param = param.string;
 			});
-			parser.hooks.call.tap("System.import", "ParserTest", (expr) => {
+			parser.hooks.importCall.tap("ParserTest", (expr) => {
 				const param = parser.evaluateExpression(expr.arguments[0]);
 				parser.state.param = param.string;
 			});

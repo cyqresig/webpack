@@ -24,7 +24,7 @@ module.exports = {
 	cache: true, // better performance for the AggressiveSplittingPlugin
 	entry: "./example",
 	output: {
-		path: path.join(__dirname, "js"),
+		path: path.join(__dirname, "dist"),
 		filename: "[chunkhash].js",
 		chunkFilename: "[chunkhash].js"
 	},
@@ -37,7 +37,7 @@ module.exports = {
 			"process.env.NODE_ENV": JSON.stringify("production")
 		})
 	],
-	recordsOutputPath: path.join(__dirname, "js", "records.json")
+	recordsOutputPath: path.join(__dirname, "dist", "records.json")
 };
 ```
 
@@ -47,140 +47,140 @@ module.exports = {
 
 ```
 Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack next
+Version: webpack 4.0.0-beta.1
                   Asset      Size  Chunks             Chunk Names
-08ecd23ddf3176db3a88.js  52.9 KiB       7  [emitted]  
-1dae9b5bc322bc72e102.js  36.5 KiB       0  [emitted]  
-43325f23025e7ada68c8.js  59.9 KiB       2  [emitted]  
-8831a28d8ef2edc602b6.js  31.6 KiB       3  [emitted]  
-d9ea753b7a8aad984dbe.js  56.1 KiB       4  [emitted]  
-cb5ec0761322c333e8ac.js  52.4 KiB       5  [emitted]  
-19ca687279727fd3fc3f.js  51.8 KiB       6  [emitted]  
-9b2a697938139189aefd.js  32.3 KiB       1  [emitted]  
-df9efbd12020674c5807.js  49.8 KiB       8  [emitted]  
-18c04360088afd74737e.js  50.9 KiB       9  [emitted]  
-8cc5180ec8a325f22c62.js  54.2 KiB      10  [emitted]  
-5f91c2732cf4f173e204.js  51.7 KiB      11  [emitted]  
-1f69c524b51fe91bffc5.js  51.2 KiB      12  [emitted]  
-01b620bad2ba9ee86fce.js  58.2 KiB      13  [emitted]  
-1ebfa89095075cd49ed2.js    22 KiB      14  [emitted]  
-Entrypoint main = 43325f23025e7ada68c8.js 8831a28d8ef2edc602b6.js 1dae9b5bc322bc72e102.js
-chunk    {0} 1dae9b5bc322bc72e102.js 32.4 KiB [initial] [rendered]
-    > aggressive-splitted main [0] ./example.js 
+aae9c6dac629dd3f112e.js  54.5 KiB       7  [emitted]  
+07ed7b2dfa6fe5502719.js  34.8 KiB       0  [emitted]  
+987f929f287f8a6c88ac.js  52.1 KiB       2  [emitted]  
+bc5ed8b126130fde4f42.js  31.1 KiB       3  [emitted]  
+511009f3a8f06b7c54cb.js    43 KiB       4  [emitted]  
+2a784b823ab0da1e0293.js  43.7 KiB       5  [emitted]  
+0abfd767d2250ac9265a.js    46 KiB       6  [emitted]  
+3147c249192926fa3521.js  12.6 KiB       1  [emitted]  
+cd98376ec90f2e366b94.js  36.8 KiB       8  [emitted]  
+a0f973cb054f411fba45.js    43 KiB       9  [emitted]  
+ee6461bbec846ab2c762.js  37.6 KiB      10  [emitted]  
+74249374b007623d16bf.js  41.7 KiB      11  [emitted]  
+0a6d10836900825087ce.js  44.7 KiB      12  [emitted]  
+5ec04d5529f6b78241e2.js  51.9 KiB      13  [emitted]  
+38a6975540caa0156886.js  51.3 KiB      14  [emitted]  
+Entrypoint main = bc5ed8b126130fde4f42.js 2a784b823ab0da1e0293.js 07ed7b2dfa6fe5502719.js
+chunk    {0} 07ed7b2dfa6fe5502719.js 28.3 KiB ={3}= ={5}= >{2}< >{4}< >{6}< >{7}< >{8}< >{9}< >{10}< >{11}< >{12}< >{13}< >{14}< >{1}< [entry] [rendered]
+    > ./example main
     [0] ./example.js 44 bytes {0} [built]
-     + 11 hidden modules
-chunk    {1} 9b2a697938139189aefd.js 31.4 KiB {0} {2} {3} [rendered] [recorded]
-    > aggressive-splitted [0] ./example.js 2:0-22
+     + 13 hidden modules
+chunk    {1} 3147c249192926fa3521.js 24.9 KiB <{3}> <{5}> <{0}> ={2}= ={4}= ={6}= ={7}= ={8}= ={9}= ={10}= ={11}= ={12}= ={13}= ={14}= [rendered]
+    > react-dom [0] ./example.js 2:0-22
     3 modules
-chunk    {2} 43325f23025e7ada68c8.js 48.8 KiB [entry] [rendered] [recorded]
-    > aggressive-splitted main [0] ./example.js 
-    16 modules
-chunk    {3} 8831a28d8ef2edc602b6.js 30.5 KiB [initial] [rendered] [recorded]
-    > aggressive-splitted main [0] ./example.js 
-    3 modules
-chunk    {4} d9ea753b7a8aad984dbe.js 48.7 KiB {0} {2} {3} [rendered] [recorded]
-    > aggressive-splitted [0] ./example.js 2:0-22
-    24 modules
-chunk    {5} cb5ec0761322c333e8ac.js 48.8 KiB {0} {2} {3} [rendered] [recorded]
-    > aggressive-splitted [0] ./example.js 2:0-22
-    11 modules
-chunk    {6} 19ca687279727fd3fc3f.js 48.6 KiB {0} {2} {3} [rendered] [recorded]
-    > aggressive-splitted [0] ./example.js 2:0-22
+chunk    {2} 987f929f287f8a6c88ac.js 45.7 KiB <{3}> <{5}> <{0}> ={4}= ={6}= ={7}= ={8}= ={9}= ={10}= ={11}= ={12}= ={13}= ={14}= ={1}= [rendered] [recorded] aggressive splitted
+    > react-dom [0] ./example.js 2:0-22
+    23 modules
+chunk    {3} bc5ed8b126130fde4f42.js 37.8 KiB ={5}= ={0}= >{2}< >{4}< >{6}< >{7}< >{8}< >{9}< >{10}< >{11}< >{12}< >{13}< >{14}< >{1}< [initial] [rendered] [recorded] aggressive splitted
+    > ./example main
+    8 modules
+chunk    {4} 511009f3a8f06b7c54cb.js 46.9 KiB <{3}> <{5}> <{0}> ={2}= ={6}= ={7}= ={8}= ={9}= ={10}= ={11}= ={12}= ={13}= ={14}= ={1}= [rendered] [recorded] aggressive splitted
+    > react-dom [0] ./example.js 2:0-22
+    8 modules
+chunk    {5} 2a784b823ab0da1e0293.js 45.7 KiB ={3}= ={0}= >{2}< >{4}< >{6}< >{7}< >{8}< >{9}< >{10}< >{11}< >{12}< >{13}< >{14}< >{1}< [initial] [rendered] [recorded] aggressive splitted
+    > ./example main
+    9 modules
+chunk    {6} 0abfd767d2250ac9265a.js 46.3 KiB <{3}> <{5}> <{0}> ={2}= ={4}= ={7}= ={8}= ={9}= ={10}= ={11}= ={12}= ={13}= ={14}= ={1}= [rendered] [recorded] aggressive splitted
+    > react-dom [0] ./example.js 2:0-22
     10 modules
-chunk    {7} 08ecd23ddf3176db3a88.js 48.7 KiB {0} {2} {3} [rendered] [recorded]
-    > aggressive-splitted [0] ./example.js 2:0-22
-    11 modules
-chunk    {8} df9efbd12020674c5807.js 48.8 KiB {0} {2} {3} [rendered] [recorded]
-    > aggressive-splitted [0] ./example.js 2:0-22
-    6 modules
-chunk    {9} 18c04360088afd74737e.js 48.7 KiB {0} {2} {3} [rendered] [recorded]
-    > aggressive-splitted [0] ./example.js 2:0-22
-    6 modules
-chunk   {10} 8cc5180ec8a325f22c62.js 48.7 KiB {0} {2} {3} [rendered] [recorded]
-    > aggressive-splitted [0] ./example.js 2:0-22
-    15 modules
-chunk   {11} 5f91c2732cf4f173e204.js 48.8 KiB {0} {2} {3} [rendered] [recorded]
-    > aggressive-splitted [0] ./example.js 2:0-22
-    9 modules
-chunk   {12} 1f69c524b51fe91bffc5.js 48.6 KiB {0} {2} {3} [rendered] [recorded]
-    > aggressive-splitted [0] ./example.js 2:0-22
+chunk    {7} aae9c6dac629dd3f112e.js 62.3 KiB <{3}> <{5}> <{0}> ={2}= ={4}= ={6}= ={8}= ={9}= ={10}= ={11}= ={12}= ={13}= ={14}= ={1}= [rendered] [recorded] aggressive splitted
+    > react-dom [0] ./example.js 2:0-22
     7 modules
-chunk   {13} 01b620bad2ba9ee86fce.js 48.5 KiB {0} {2} {3} [rendered] [recorded]
-    > aggressive-splitted [0] ./example.js 2:0-22
-    28 modules
-chunk   {14} 1ebfa89095075cd49ed2.js 18.9 KiB {0} {2} {3} [rendered]
-    > aggressive-splitted [0] ./example.js 2:0-22
+chunk    {8} cd98376ec90f2e366b94.js 43.3 KiB <{3}> <{5}> <{0}> ={2}= ={4}= ={6}= ={7}= ={9}= ={10}= ={11}= ={12}= ={13}= ={14}= ={1}= [rendered] [recorded] aggressive splitted
+    > react-dom [0] ./example.js 2:0-22
+    3 modules
+chunk    {9} a0f973cb054f411fba45.js 44.4 KiB <{3}> <{5}> <{0}> ={2}= ={4}= ={6}= ={7}= ={8}= ={10}= ={11}= ={12}= ={13}= ={14}= ={1}= [rendered] [recorded] aggressive splitted
+    > react-dom [0] ./example.js 2:0-22
+    10 modules
+chunk   {10} ee6461bbec846ab2c762.js 34 KiB <{3}> <{5}> <{0}> ={2}= ={4}= ={6}= ={7}= ={8}= ={9}= ={11}= ={12}= ={13}= ={14}= ={1}= [rendered] [recorded] aggressive splitted
+    > react-dom [0] ./example.js 2:0-22
+    16 modules
+chunk   {11} 74249374b007623d16bf.js 48.4 KiB <{3}> <{5}> <{0}> ={2}= ={4}= ={6}= ={7}= ={8}= ={9}= ={10}= ={12}= ={13}= ={14}= ={1}= [rendered] [recorded] aggressive splitted
+    > react-dom [0] ./example.js 2:0-22
+    6 modules
+chunk   {12} 0a6d10836900825087ce.js 46.2 KiB <{3}> <{5}> <{0}> ={2}= ={4}= ={6}= ={7}= ={8}= ={9}= ={10}= ={11}= ={13}= ={14}= ={1}= [rendered] [recorded] aggressive splitted
+    > react-dom [0] ./example.js 2:0-22
     9 modules
+chunk   {13} 5ec04d5529f6b78241e2.js 48.2 KiB <{3}> <{5}> <{0}> ={2}= ={4}= ={6}= ={7}= ={8}= ={9}= ={10}= ={11}= ={12}= ={14}= ={1}= [rendered] [recorded] aggressive splitted
+    > react-dom [0] ./example.js 2:0-22
+    20 modules
+chunk   {14} 38a6975540caa0156886.js 46.6 KiB <{3}> <{5}> <{0}> ={2}= ={4}= ={6}= ={7}= ={8}= ={9}= ={10}= ={11}= ={12}= ={13}= ={1}= [rendered] [recorded] aggressive splitted
+    > react-dom [0] ./example.js 2:0-22
+    24 modules
 ```
 
 ## Production mode
 
 ```
 Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack next
+Version: webpack 4.0.0-beta.1
                   Asset      Size  Chunks             Chunk Names
-af741e13c4c621499dd3.js  10.6 KiB       7  [emitted]  
-25e8dc4b493c95c92544.js  4.88 KiB       0  [emitted]  
-a59e3b5e1cdf8ebd4e0e.js  15.1 KiB       2  [emitted]  
-35a6d6316f3be0f41389.js  7.49 KiB       3  [emitted]  
-c49286736402aaeb0066.js  10.8 KiB       4  [emitted]  
-5369ef079d20011a622e.js  12.5 KiB       5  [emitted]  
-26303e97c227d61db7aa.js  11.1 KiB       6  [emitted]  
-b25811003a7d4b5cba6e.js  8.75 KiB       1  [emitted]  
-92b243c21f8e6c40905a.js  12.1 KiB       8  [emitted]  
-a3c0c8a8a40367371001.js  9.93 KiB       9  [emitted]  
-abb691f3d6dccb56d0db.js    13 KiB      10  [emitted]  
-3979cfd0863b094d874b.js  4.99 KiB      11  [emitted]  
-7a5b97b8590a4dfb2451.js  7.02 KiB      12  [emitted]  
-b707bf605695570bbc9b.js  10.2 KiB      13  [emitted]  
-9126f24a11f6cf4fb5f8.js  5.91 KiB      14  [emitted]  
-Entrypoint main = b707bf605695570bbc9b.js 7a5b97b8590a4dfb2451.js 9126f24a11f6cf4fb5f8.js
-chunk    {0} 25e8dc4b493c95c92544.js 18.9 KiB {12} {13} {14} [rendered]
-    > aggressive-splitted [30] ./example.js 2:0-22
-    9 modules
-chunk    {1} b25811003a7d4b5cba6e.js 48.5 KiB {12} {13} {14} [rendered] [recorded]
-    > aggressive-splitted [30] ./example.js 2:0-22
-    28 modules
-chunk    {2} a59e3b5e1cdf8ebd4e0e.js 48.6 KiB {12} {13} {14} [rendered] [recorded]
-    > aggressive-splitted [30] ./example.js 2:0-22
-    7 modules
-chunk    {3} 35a6d6316f3be0f41389.js 48.8 KiB {12} {13} {14} [rendered] [recorded]
-    > aggressive-splitted [30] ./example.js 2:0-22
-    9 modules
-chunk    {4} c49286736402aaeb0066.js 48.7 KiB {12} {13} {14} [rendered] [recorded]
-    > aggressive-splitted [30] ./example.js 2:0-22
-    15 modules
-chunk    {5} 5369ef079d20011a622e.js 48.7 KiB {12} {13} {14} [rendered] [recorded]
-    > aggressive-splitted [30] ./example.js 2:0-22
-    6 modules
-chunk    {6} 26303e97c227d61db7aa.js 48.8 KiB {12} {13} {14} [rendered] [recorded]
-    > aggressive-splitted [30] ./example.js 2:0-22
-    6 modules
-chunk    {7} af741e13c4c621499dd3.js 48.7 KiB {12} {13} {14} [rendered] [recorded]
-    > aggressive-splitted [30] ./example.js 2:0-22
-    11 modules
-chunk    {8} 92b243c21f8e6c40905a.js 48.6 KiB {12} {13} {14} [rendered] [recorded]
-    > aggressive-splitted [30] ./example.js 2:0-22
-    10 modules
-chunk    {9} a3c0c8a8a40367371001.js 48.8 KiB {12} {13} {14} [rendered] [recorded]
-    > aggressive-splitted [30] ./example.js 2:0-22
-    11 modules
-chunk   {10} abb691f3d6dccb56d0db.js 48.7 KiB {12} {13} {14} [rendered] [recorded]
-    > aggressive-splitted [30] ./example.js 2:0-22
+7a1ec67d9e4e1019836a.js  14.8 KiB       7  [emitted]  
+9baaf7bc0364c2600ef8.js   9.7 KiB       0  [emitted]  
+cf3beff30352265c3fae.js  13.1 KiB       2  [emitted]  
+0bc9e49d2884c20a78ae.js  7.89 KiB       3  [emitted]  
+408e20e95f946dedfdd3.js  8.14 KiB       4  [emitted]  
+5b44ef86854beead5c79.js  10.1 KiB       5  [emitted]  
+2d761db260e810943d04.js  10.5 KiB       6  [emitted]  
+148bbb5ef8fd203f5c99.js  9.97 KiB       1  [emitted]  
+5efec1104bcbe14efad9.js  10.9 KiB       8  [emitted]  
+050d4b543b70cc78b255.js  9.91 KiB       9  [emitted]  
+2c42126f0455b98de2d0.js    12 KiB      10  [emitted]  
+27d8a7d99dbd33243169.js   4.2 KiB      11  [emitted]  
+f9403b4474b02c436f23.js  10.9 KiB      12  [emitted]  
+97ad3a6439b7ef8470ec.js  6.41 KiB      13  [emitted]  
+ed199e2ef66607136e6a.js  5.97 KiB      14  [emitted]  
+Entrypoint main = 97ad3a6439b7ef8470ec.js f9403b4474b02c436f23.js ed199e2ef66607136e6a.js
+chunk    {0} 9baaf7bc0364c2600ef8.js 46.6 KiB <{13}> <{12}> <{14}> ={10}= ={9}= ={8}= ={7}= ={6}= ={5}= ={4}= ={3}= ={2}= ={1}= ={11}= [rendered] [recorded] aggressive splitted
+    > react-dom [30] ./example.js 2:0-22
     24 modules
-chunk   {11} 3979cfd0863b094d874b.js 31.4 KiB {12} {13} {14} [rendered] [recorded]
-    > aggressive-splitted [30] ./example.js 2:0-22
-    3 modules
-chunk   {12} 7a5b97b8590a4dfb2451.js 30.5 KiB [initial] [rendered] [recorded]
-    > aggressive-splitted main [30] ./example.js 
-    3 modules
-chunk   {13} b707bf605695570bbc9b.js 48.8 KiB [entry] [rendered] [recorded]
-    > aggressive-splitted main [30] ./example.js 
+chunk    {1} 148bbb5ef8fd203f5c99.js 48.2 KiB <{13}> <{12}> <{14}> ={10}= ={9}= ={8}= ={7}= ={6}= ={5}= ={4}= ={3}= ={2}= ={0}= ={11}= [rendered] [recorded] aggressive splitted
+    > react-dom [30] ./example.js 2:0-22
+    20 modules
+chunk    {2} cf3beff30352265c3fae.js 46.2 KiB <{13}> <{12}> <{14}> ={10}= ={9}= ={8}= ={7}= ={6}= ={5}= ={4}= ={3}= ={1}= ={0}= ={11}= [rendered] [recorded] aggressive splitted
+    > react-dom [30] ./example.js 2:0-22
+    9 modules
+chunk    {3} 0bc9e49d2884c20a78ae.js 48.4 KiB <{13}> <{12}> <{14}> ={10}= ={9}= ={8}= ={7}= ={6}= ={5}= ={4}= ={2}= ={1}= ={0}= ={11}= [rendered] [recorded] aggressive splitted
+    > react-dom [30] ./example.js 2:0-22
+    6 modules
+chunk    {4} 408e20e95f946dedfdd3.js 34 KiB <{13}> <{12}> <{14}> ={10}= ={9}= ={8}= ={7}= ={6}= ={5}= ={3}= ={2}= ={1}= ={0}= ={11}= [rendered] [recorded] aggressive splitted
+    > react-dom [30] ./example.js 2:0-22
     16 modules
-chunk   {14} 9126f24a11f6cf4fb5f8.js 32.4 KiB [initial] [rendered]
-    > aggressive-splitted main [30] ./example.js 
+chunk    {5} 5b44ef86854beead5c79.js 44.4 KiB <{13}> <{12}> <{14}> ={10}= ={9}= ={8}= ={7}= ={6}= ={4}= ={3}= ={2}= ={1}= ={0}= ={11}= [rendered] [recorded] aggressive splitted
+    > react-dom [30] ./example.js 2:0-22
+    10 modules
+chunk    {6} 2d761db260e810943d04.js 43.3 KiB <{13}> <{12}> <{14}> ={10}= ={9}= ={8}= ={7}= ={5}= ={4}= ={3}= ={2}= ={1}= ={0}= ={11}= [rendered] [recorded] aggressive splitted
+    > react-dom [30] ./example.js 2:0-22
+    3 modules
+chunk    {7} 7a1ec67d9e4e1019836a.js 62.3 KiB <{13}> <{12}> <{14}> ={10}= ={9}= ={8}= ={6}= ={5}= ={4}= ={3}= ={2}= ={1}= ={0}= ={11}= [rendered] [recorded] aggressive splitted
+    > react-dom [30] ./example.js 2:0-22
+    7 modules
+chunk    {8} 5efec1104bcbe14efad9.js 46.3 KiB <{13}> <{12}> <{14}> ={10}= ={9}= ={7}= ={6}= ={5}= ={4}= ={3}= ={2}= ={1}= ={0}= ={11}= [rendered] [recorded] aggressive splitted
+    > react-dom [30] ./example.js 2:0-22
+    10 modules
+chunk    {9} 050d4b543b70cc78b255.js 46.9 KiB <{13}> <{12}> <{14}> ={10}= ={8}= ={7}= ={6}= ={5}= ={4}= ={3}= ={2}= ={1}= ={0}= ={11}= [rendered] [recorded] aggressive splitted
+    > react-dom [30] ./example.js 2:0-22
+    8 modules
+chunk   {10} 2c42126f0455b98de2d0.js 45.7 KiB <{13}> <{12}> <{14}> ={9}= ={8}= ={7}= ={6}= ={5}= ={4}= ={3}= ={2}= ={1}= ={0}= ={11}= [rendered] [recorded] aggressive splitted
+    > react-dom [30] ./example.js 2:0-22
+    23 modules
+chunk   {11} 27d8a7d99dbd33243169.js 24.9 KiB <{13}> <{12}> <{14}> ={10}= ={9}= ={8}= ={7}= ={6}= ={5}= ={4}= ={3}= ={2}= ={1}= ={0}= [rendered]
+    > react-dom [30] ./example.js 2:0-22
+    3 modules
+chunk   {12} f9403b4474b02c436f23.js 45.7 KiB ={13}= ={14}= >{10}< >{9}< >{8}< >{7}< >{6}< >{5}< >{4}< >{3}< >{2}< >{1}< >{0}< >{11}< [initial] [rendered] [recorded] aggressive splitted
+    > ./example main
+    9 modules
+chunk   {13} 97ad3a6439b7ef8470ec.js 37.8 KiB ={12}= ={14}= >{10}< >{9}< >{8}< >{7}< >{6}< >{5}< >{4}< >{3}< >{2}< >{1}< >{0}< >{11}< [initial] [rendered] [recorded] aggressive splitted
+    > ./example main
+    8 modules
+chunk   {14} ed199e2ef66607136e6a.js 28.3 KiB ={13}= ={12}= >{10}< >{9}< >{8}< >{7}< >{6}< >{5}< >{4}< >{3}< >{2}< >{1}< >{0}< >{11}< [entry] [rendered]
+    > ./example main
    [30] ./example.js 44 bytes {14} [built]
-     + 11 hidden modules
+     + 13 hidden modules
 ```
 
 ## Records
@@ -535,265 +535,282 @@ chunk   {14} 9126f24a11f6cf4fb5f8.js 32.4 KiB [initial] [rendered]
   },
   "chunks": {
     "byName": {},
-    "byBlocks": {
-      "example.js:0/0:11": 1,
-      "example.js:0/0:1": 4,
-      "example.js:0/0:4": 5,
-      "example.js:0/0:5": 6,
-      "example.js:0/0:3": 7,
-      "example.js:0/0:10": 8,
-      "example.js:0/0:9": 9,
-      "example.js:0/0:2": 10,
-      "example.js:0/0:7": 11,
-      "example.js:0/0:8": 12,
-      "example.js:0/0:0": 13,
-      "example.js:0/0:6": 14
+    "bySource": {
+      "11 example.js react-dom": 1,
+      "0 example.js react-dom": 2,
+      "1 example.js react-dom": 4,
+      "2 example.js react-dom": 6,
+      "3 example.js react-dom": 7,
+      "4 example.js react-dom": 8,
+      "5 example.js react-dom": 9,
+      "6 example.js react-dom": 10,
+      "7 example.js react-dom": 11,
+      "8 example.js react-dom": 12,
+      "9 example.js react-dom": 13,
+      "10 example.js react-dom": 14
     },
-    "usedIds": {
-      "0": 0,
-      "1": 1,
-      "2": 2,
-      "3": 3,
-      "4": 4,
-      "5": 5,
-      "6": 6,
-      "7": 7,
-      "8": 8,
-      "9": 9,
-      "10": 10,
-      "11": 11,
-      "12": 12,
-      "13": 13,
-      "14": 14
-    }
+    "usedIds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ]
   },
   "aggressiveSplits": [
     {
       "modules": [
-        "../../node_modules/react-dom/lib/traverseAllChildren.js",
-        "../../node_modules/react/lib/ReactComponentTreeHook.js",
-        "../../node_modules/react-dom/lib/validateDOMNesting.js"
+        "../../node_modules/fbjs/lib/EventListener.js",
+        "../../node_modules/fbjs/lib/ExecutionEnvironment.js",
+        "../../node_modules/fbjs/lib/camelize.js",
+        "../../node_modules/fbjs/lib/camelizeStyleName.js",
+        "../../node_modules/fbjs/lib/containsNode.js",
+        "../../node_modules/fbjs/lib/createArrayFromMixed.js",
+        "../../node_modules/fbjs/lib/createNodesFromMarkup.js",
+        "../../node_modules/fbjs/lib/focusNode.js",
+        "../../node_modules/fbjs/lib/getActiveElement.js",
+        "../../node_modules/fbjs/lib/getMarkupWrap.js",
+        "../../node_modules/fbjs/lib/getUnboundedScrollPosition.js",
+        "../../node_modules/fbjs/lib/hyphenate.js",
+        "../../node_modules/fbjs/lib/hyphenateStyleName.js",
+        "../../node_modules/fbjs/lib/isNode.js",
+        "../../node_modules/fbjs/lib/isTextNode.js",
+        "../../node_modules/fbjs/lib/memoizeStringOnly.js",
+        "../../node_modules/fbjs/lib/shallowEqual.js",
+        "../../node_modules/process/browser.js",
+        "../../node_modules/react-dom/index.js",
+        "../../node_modules/react-dom/lib/ARIADOMPropertyConfig.js",
+        "../../node_modules/react-dom/lib/AutoFocusUtils.js",
+        "../../node_modules/react-dom/lib/BeforeInputEventPlugin.js",
+        "../../node_modules/react-dom/lib/CSSProperty.js"
       ],
-      "hash": "9b2a697938139189aefdb0d1652d4e1c",
-      "id": 1
-    },
-    {
-      "modules": [
-        "../../node_modules/react/lib/React.js",
-        "../../node_modules/object-assign/index.js",
-        "../../node_modules/fbjs/lib/warning.js",
-        "../../node_modules/fbjs/lib/emptyFunction.js",
-        "../../node_modules/fbjs/lib/emptyObject.js",
-        "../../node_modules/fbjs/lib/invariant.js",
-        "../../node_modules/react/lib/PooledClass.js",
-        "../../node_modules/react/lib/ReactCurrentOwner.js",
-        "../../node_modules/react/lib/ReactElementSymbol.js",
-        "../../node_modules/react/lib/KeyEscapeUtils.js",
-        "../../node_modules/react/lib/ReactPropTypes.js",
-        "../../node_modules/prop-types/factory.js",
-        "../../node_modules/prop-types/lib/ReactPropTypesSecret.js",
-        "../../node_modules/prop-types/checkPropTypes.js",
-        "../../node_modules/react/lib/ReactVersion.js",
-        "../../node_modules/create-react-class/factory.js"
-      ],
-      "hash": "43325f23025e7ada68c8687aed600203",
+      "size": 46843,
+      "hash": "987f929f287f8a6c88ac92f1fbcd45be",
       "id": 2
     },
     {
       "modules": [
-        "../../node_modules/react/lib/ReactBaseClasses.js",
-        "../../node_modules/react/lib/ReactChildren.js",
-        "../../node_modules/prop-types/factoryWithTypeCheckers.js"
+        "../../node_modules/create-react-class/factory.js",
+        "../../node_modules/fbjs/lib/emptyFunction.js",
+        "../../node_modules/fbjs/lib/emptyObject.js",
+        "../../node_modules/fbjs/lib/invariant.js",
+        "../../node_modules/fbjs/lib/warning.js",
+        "../../node_modules/object-assign/index.js",
+        "../../node_modules/prop-types/checkPropTypes.js",
+        "../../node_modules/prop-types/factory.js"
       ],
-      "hash": "8831a28d8ef2edc602b69a01de1e713f",
+      "size": 38697,
+      "hash": "bc5ed8b126130fde4f428f05cac600ce",
       "id": 3
     },
     {
       "modules": [
-        "../../node_modules/react-dom/index.js",
-        "../../node_modules/react-dom/lib/ARIADOMPropertyConfig.js",
-        "../../node_modules/react-dom/lib/BeforeInputEventPlugin.js",
-        "../../node_modules/fbjs/lib/ExecutionEnvironment.js",
+        "../../node_modules/react-dom/lib/CSSPropertyOperations.js",
         "../../node_modules/react-dom/lib/CallbackQueue.js",
-        "../../node_modules/fbjs/lib/createNodesFromMarkup.js",
-        "../../node_modules/fbjs/lib/createArrayFromMixed.js",
-        "../../node_modules/fbjs/lib/getMarkupWrap.js",
-        "../../node_modules/react-dom/lib/AutoFocusUtils.js",
-        "../../node_modules/fbjs/lib/focusNode.js",
-        "../../node_modules/react-dom/lib/CSSProperty.js",
-        "../../node_modules/fbjs/lib/camelizeStyleName.js",
-        "../../node_modules/fbjs/lib/camelize.js",
-        "../../node_modules/fbjs/lib/hyphenateStyleName.js",
-        "../../node_modules/fbjs/lib/hyphenate.js",
-        "../../node_modules/fbjs/lib/memoizeStringOnly.js",
-        "../../node_modules/process/browser.js",
-        "../../node_modules/fbjs/lib/shallowEqual.js",
-        "../../node_modules/fbjs/lib/EventListener.js",
-        "../../node_modules/fbjs/lib/getUnboundedScrollPosition.js",
-        "../../node_modules/fbjs/lib/containsNode.js",
-        "../../node_modules/fbjs/lib/isTextNode.js",
-        "../../node_modules/fbjs/lib/isNode.js",
-        "../../node_modules/fbjs/lib/getActiveElement.js"
+        "../../node_modules/react-dom/lib/ChangeEventPlugin.js",
+        "../../node_modules/react-dom/lib/DOMChildrenOperations.js",
+        "../../node_modules/react-dom/lib/DOMLazyTree.js",
+        "../../node_modules/react-dom/lib/DOMNamespaces.js",
+        "../../node_modules/react-dom/lib/DOMProperty.js",
+        "../../node_modules/react-dom/lib/DOMPropertyOperations.js"
       ],
-      "hash": "d9ea753b7a8aad984dbed4a32f145326",
+      "size": 47979,
+      "hash": "511009f3a8f06b7c54cbbcccac9d6dfb",
       "id": 4
     },
     {
       "modules": [
-        "../../node_modules/react-dom/lib/DOMProperty.js",
-        "../../node_modules/react-dom/lib/ChangeEventPlugin.js",
-        "../../node_modules/react-dom/lib/DefaultEventPluginOrder.js",
-        "../../node_modules/react-dom/lib/ReactComponentBrowserEnvironment.js",
-        "../../node_modules/react-dom/lib/DOMChildrenOperations.js",
-        "../../node_modules/react-dom/lib/DOMLazyTree.js",
-        "../../node_modules/react-dom/lib/DOMNamespaces.js",
-        "../../node_modules/react-dom/lib/Danger.js",
-        "../../node_modules/react-dom/lib/CSSPropertyOperations.js",
-        "../../node_modules/react-dom/lib/DOMPropertyOperations.js",
-        "../../node_modules/react-dom/lib/KeyEscapeUtils.js"
+        "../../node_modules/prop-types/factoryWithTypeCheckers.js",
+        "../../node_modules/prop-types/lib/ReactPropTypesSecret.js",
+        "../../node_modules/react/lib/KeyEscapeUtils.js",
+        "../../node_modules/react/lib/PooledClass.js",
+        "../../node_modules/react/lib/React.js",
+        "../../node_modules/react/lib/ReactBaseClasses.js",
+        "../../node_modules/react/lib/ReactChildren.js",
+        "../../node_modules/react/lib/ReactCurrentOwner.js",
+        "../../node_modules/react/lib/ReactDOMFactories.js"
       ],
-      "hash": "cb5ec0761322c333e8acb7e8f8be5c9a",
+      "size": 46762,
+      "hash": "2a784b823ab0da1e02933326e6e3f80f",
       "id": 5
     },
     {
       "modules": [
-        "../../node_modules/react-dom/lib/ReactDOMComponentFlags.js",
-        "../../node_modules/react-dom/lib/EventPropagators.js",
+        "../../node_modules/react-dom/lib/Danger.js",
+        "../../node_modules/react-dom/lib/DefaultEventPluginOrder.js",
+        "../../node_modules/react-dom/lib/EnterLeaveEventPlugin.js",
         "../../node_modules/react-dom/lib/EventPluginHub.js",
         "../../node_modules/react-dom/lib/EventPluginRegistry.js",
         "../../node_modules/react-dom/lib/EventPluginUtils.js",
+        "../../node_modules/react-dom/lib/EventPropagators.js",
         "../../node_modules/react-dom/lib/FallbackCompositionState.js",
-        "../../node_modules/react-dom/lib/EnterLeaveEventPlugin.js",
         "../../node_modules/react-dom/lib/HTMLDOMPropertyConfig.js",
-        "../../node_modules/react-dom/lib/LinkedValueUtils.js",
-        "../../node_modules/react-dom/lib/ReactComponentEnvironment.js"
+        "../../node_modules/react-dom/lib/KeyEscapeUtils.js"
       ],
-      "hash": "19ca687279727fd3fc3f35dee753033b",
+      "size": 47455,
+      "hash": "0abfd767d2250ac9265a7fa790d9e9f5",
       "id": 6
     },
     {
       "modules": [
-        "../../node_modules/react-dom/lib/ReactDOM.js",
-        "../../node_modules/react-dom/lib/ReactDOMComponentTree.js",
+        "../../node_modules/react-dom/lib/LinkedValueUtils.js",
         "../../node_modules/react-dom/lib/PooledClass.js",
-        "../../node_modules/react-dom/lib/ReactDOMIDOperations.js",
         "../../node_modules/react-dom/lib/ReactBrowserEventEmitter.js",
-        "../../node_modules/react-dom/lib/ReactDOMInput.js",
-        "../../node_modules/react-dom/lib/ReactPropTypesSecret.js",
         "../../node_modules/react-dom/lib/ReactChildReconciler.js",
-        "../../node_modules/react-dom/lib/ReactDOMEmptyComponent.js",
-        "../../node_modules/react-dom/lib/ReactDOMContainerInfo.js",
-        "../../node_modules/react-dom/lib/ReactDOMFeatureFlags.js"
+        "../../node_modules/react-dom/lib/ReactComponentBrowserEnvironment.js",
+        "../../node_modules/react-dom/lib/ReactComponentEnvironment.js",
+        "../../node_modules/react-dom/lib/ReactCompositeComponent.js"
       ],
-      "hash": "08ecd23ddf3176db3a888250a46c1386",
+      "size": 63814,
+      "hash": "aae9c6dac629dd3f112ead84c645f3fa",
       "id": 7
     },
     {
       "modules": [
-        "../../node_modules/react-dom/lib/ReactFeatureFlags.js",
-        "../../node_modules/react-dom/lib/ReactDOMOption.js",
-        "../../node_modules/react-dom/lib/ReactDOMSelect.js",
-        "../../node_modules/react-dom/lib/ReactCompositeComponent.js",
-        "../../node_modules/react-dom/lib/ReactElementSymbol.js",
-        "../../node_modules/react-dom/lib/ReactDOMTreeTraversal.js"
+        "../../node_modules/react-dom/lib/ReactDOM.js",
+        "../../node_modules/react-dom/lib/ReactDOMComponent.js",
+        "../../node_modules/react-dom/lib/ReactDOMComponentFlags.js"
       ],
-      "hash": "df9efbd12020674c580712ed1705ec11",
+      "size": 44366,
+      "hash": "cd98376ec90f2e366b9425f7247176e1",
       "id": 8
     },
     {
       "modules": [
-        "../../node_modules/react-dom/lib/ReactDOMComponent.js",
-        "../../node_modules/react-dom/lib/ReactEventEmitterMixin.js",
-        "../../node_modules/react-dom/lib/ReactEmptyComponent.js",
-        "../../node_modules/react-dom/lib/ReactDefaultBatchingStrategy.js",
-        "../../node_modules/react-dom/lib/ReactInjection.js",
-        "../../node_modules/react-dom/lib/ReactDOMSelection.js"
+        "../../node_modules/react-dom/lib/ReactDOMComponentTree.js",
+        "../../node_modules/react-dom/lib/ReactDOMContainerInfo.js",
+        "../../node_modules/react-dom/lib/ReactDOMEmptyComponent.js",
+        "../../node_modules/react-dom/lib/ReactDOMFeatureFlags.js",
+        "../../node_modules/react-dom/lib/ReactDOMIDOperations.js",
+        "../../node_modules/react-dom/lib/ReactDOMInput.js",
+        "../../node_modules/react-dom/lib/ReactDOMOption.js",
+        "../../node_modules/react-dom/lib/ReactDOMSelect.js",
+        "../../node_modules/react-dom/lib/ReactDOMSelection.js",
+        "../../node_modules/react-dom/lib/ReactDOMTextComponent.js"
       ],
-      "hash": "18c04360088afd74737ec021f44ebe45",
+      "size": 45476,
+      "hash": "a0f973cb054f411fba45bd946c5bf6e3",
       "id": 9
     },
     {
       "modules": [
-        "../../node_modules/react-dom/lib/ReactDefaultInjection.js",
-        "../../node_modules/react-dom/lib/ReactErrorUtils.js",
-        "../../node_modules/react-dom/lib/ReactRef.js",
-        "../../node_modules/react-dom/lib/ReactInstrumentation.js",
         "../../node_modules/react-dom/lib/ReactDOMTextarea.js",
-        "../../node_modules/react-dom/lib/ReactMultiChild.js",
-        "../../node_modules/react-dom/lib/ReactInstanceMap.js",
-        "../../node_modules/react-dom/lib/ReactNodeTypes.js",
-        "../../node_modules/react-dom/lib/ReactHostComponent.js",
-        "../../node_modules/react-dom/lib/ReactDOMTextComponent.js",
+        "../../node_modules/react-dom/lib/ReactDOMTreeTraversal.js",
+        "../../node_modules/react-dom/lib/ReactDefaultBatchingStrategy.js",
+        "../../node_modules/react-dom/lib/ReactDefaultInjection.js",
+        "../../node_modules/react-dom/lib/ReactElementSymbol.js",
+        "../../node_modules/react-dom/lib/ReactEmptyComponent.js",
+        "../../node_modules/react-dom/lib/ReactErrorUtils.js",
+        "../../node_modules/react-dom/lib/ReactEventEmitterMixin.js",
         "../../node_modules/react-dom/lib/ReactEventListener.js",
+        "../../node_modules/react-dom/lib/ReactFeatureFlags.js",
+        "../../node_modules/react-dom/lib/ReactHostComponent.js",
+        "../../node_modules/react-dom/lib/ReactInjection.js",
         "../../node_modules/react-dom/lib/ReactInputSelection.js",
-        "../../node_modules/react-dom/lib/ReactMarkupChecksum.js",
-        "../../node_modules/react-dom/lib/ReactVersion.js",
-        "../../node_modules/react-dom/lib/renderSubtreeIntoContainer.js"
+        "../../node_modules/react-dom/lib/ReactInstanceMap.js",
+        "../../node_modules/react-dom/lib/ReactInstrumentation.js",
+        "../../node_modules/react-dom/lib/ReactMarkupChecksum.js"
       ],
-      "hash": "8cc5180ec8a325f22c628da0b005e753",
+      "size": 34770,
+      "hash": "ee6461bbec846ab2c7626a8d8fd1fb21",
       "id": 10
     },
     {
       "modules": [
-        "../../node_modules/react-dom/lib/SyntheticCompositionEvent.js",
-        "../../node_modules/react-dom/lib/ReactReconciler.js",
+        "../../node_modules/react-dom/lib/ReactMount.js",
+        "../../node_modules/react-dom/lib/ReactMultiChild.js",
+        "../../node_modules/react-dom/lib/ReactNodeTypes.js",
         "../../node_modules/react-dom/lib/ReactOwner.js",
-        "../../node_modules/react-dom/lib/ReactServerRenderingTransaction.js",
-        "../../node_modules/react-dom/lib/ReactServerUpdateQueue.js",
-        "../../node_modules/react-dom/lib/ReactReconcileTransaction.js",
-        "../../node_modules/react-dom/lib/SyntheticAnimationEvent.js",
-        "../../node_modules/react-dom/lib/SyntheticClipboardEvent.js",
-        "../../node_modules/react-dom/lib/ReactMount.js"
+        "../../node_modules/react-dom/lib/ReactPropTypesSecret.js",
+        "../../node_modules/react-dom/lib/ReactReconcileTransaction.js"
       ],
-      "hash": "5f91c2732cf4f173e20464b258b657d1",
+      "size": 49575,
+      "hash": "74249374b007623d16bffa559688d7d5",
       "id": 11
     },
     {
       "modules": [
-        "../../node_modules/react-dom/lib/SyntheticEvent.js",
-        "../../node_modules/react-dom/lib/ReactUpdates.js",
+        "../../node_modules/react-dom/lib/ReactReconciler.js",
+        "../../node_modules/react-dom/lib/ReactRef.js",
+        "../../node_modules/react-dom/lib/ReactServerRenderingTransaction.js",
+        "../../node_modules/react-dom/lib/ReactServerUpdateQueue.js",
         "../../node_modules/react-dom/lib/ReactUpdateQueue.js",
+        "../../node_modules/react-dom/lib/ReactUpdates.js",
+        "../../node_modules/react-dom/lib/ReactVersion.js",
         "../../node_modules/react-dom/lib/SVGDOMPropertyConfig.js",
-        "../../node_modules/react-dom/lib/SelectEventPlugin.js",
-        "../../node_modules/react-dom/lib/SimpleEventPlugin.js",
-        "../../node_modules/react-dom/lib/SyntheticDragEvent.js"
+        "../../node_modules/react-dom/lib/SelectEventPlugin.js"
       ],
-      "hash": "1f69c524b51fe91bffc5862a98cc2fd5",
+      "size": 47320,
+      "hash": "0a6d10836900825087ce02acffa0b1c0",
       "id": 12
     },
     {
       "modules": [
-        "../../node_modules/react-dom/lib/accumulateInto.js",
-        "../../node_modules/react-dom/lib/forEachAccumulated.js",
-        "../../node_modules/react-dom/lib/getTextContentAccessor.js",
-        "../../node_modules/react-dom/lib/SyntheticInputEvent.js",
-        "../../node_modules/react-dom/lib/Transaction.js",
-        "../../node_modules/react-dom/lib/getEventTarget.js",
-        "../../node_modules/react-dom/lib/isEventSupported.js",
-        "../../node_modules/react-dom/lib/SyntheticMouseEvent.js",
-        "../../node_modules/react-dom/lib/SyntheticUIEvent.js",
-        "../../node_modules/react-dom/lib/ViewportMetrics.js",
-        "../../node_modules/react-dom/lib/getEventModifierState.js",
-        "../../node_modules/react-dom/lib/createMicrosoftUnsafeLocalFunction.js",
-        "../../node_modules/react-dom/lib/escapeTextContentForBrowser.js",
-        "../../node_modules/react-dom/lib/dangerousStyleValue.js",
-        "../../node_modules/react-dom/lib/quoteAttributeValueForBrowser.js",
-        "../../node_modules/react-dom/lib/getIteratorFn.js",
-        "../../node_modules/react-dom/lib/flattenChildren.js",
-        "../../node_modules/react-dom/lib/getNodeForCharacterOffset.js",
+        "../../node_modules/react-dom/lib/SimpleEventPlugin.js",
+        "../../node_modules/react-dom/lib/SyntheticAnimationEvent.js",
+        "../../node_modules/react-dom/lib/SyntheticClipboardEvent.js",
+        "../../node_modules/react-dom/lib/SyntheticCompositionEvent.js",
+        "../../node_modules/react-dom/lib/SyntheticDragEvent.js",
+        "../../node_modules/react-dom/lib/SyntheticEvent.js",
         "../../node_modules/react-dom/lib/SyntheticFocusEvent.js",
+        "../../node_modules/react-dom/lib/SyntheticInputEvent.js",
         "../../node_modules/react-dom/lib/SyntheticKeyboardEvent.js",
-        "../../node_modules/react-dom/lib/getEventCharCode.js",
-        "../../node_modules/react-dom/lib/getEventKey.js",
+        "../../node_modules/react-dom/lib/SyntheticMouseEvent.js",
         "../../node_modules/react-dom/lib/SyntheticTouchEvent.js",
         "../../node_modules/react-dom/lib/SyntheticTransitionEvent.js",
+        "../../node_modules/react-dom/lib/SyntheticUIEvent.js",
         "../../node_modules/react-dom/lib/SyntheticWheelEvent.js",
+        "../../node_modules/react-dom/lib/Transaction.js",
+        "../../node_modules/react-dom/lib/ViewportMetrics.js",
+        "../../node_modules/react-dom/lib/accumulateInto.js",
         "../../node_modules/react-dom/lib/adler32.js",
-        "../../node_modules/react-dom/lib/findDOMNode.js",
-        "../../node_modules/react-dom/lib/getHostComponentFromComposite.js"
+        "../../node_modules/react-dom/lib/createMicrosoftUnsafeLocalFunction.js",
+        "../../node_modules/react-dom/lib/dangerousStyleValue.js"
       ],
-      "hash": "01b620bad2ba9ee86fce5a1669cd7b3e",
+      "size": 49350,
+      "hash": "5ec04d5529f6b78241e25db6f0254a6f",
       "id": 13
+    },
+    {
+      "modules": [
+        "../../node_modules/react-dom/lib/escapeTextContentForBrowser.js",
+        "../../node_modules/react-dom/lib/findDOMNode.js",
+        "../../node_modules/react-dom/lib/flattenChildren.js",
+        "../../node_modules/react-dom/lib/forEachAccumulated.js",
+        "../../node_modules/react-dom/lib/getEventCharCode.js",
+        "../../node_modules/react-dom/lib/getEventKey.js",
+        "../../node_modules/react-dom/lib/getEventModifierState.js",
+        "../../node_modules/react-dom/lib/getEventTarget.js",
+        "../../node_modules/react-dom/lib/getHostComponentFromComposite.js",
+        "../../node_modules/react-dom/lib/getIteratorFn.js",
+        "../../node_modules/react-dom/lib/getNodeForCharacterOffset.js",
+        "../../node_modules/react-dom/lib/getTextContentAccessor.js",
+        "../../node_modules/react-dom/lib/getVendorPrefixedEventName.js",
+        "../../node_modules/react-dom/lib/inputValueTracking.js",
+        "../../node_modules/react-dom/lib/instantiateReactComponent.js",
+        "../../node_modules/react-dom/lib/isEventSupported.js",
+        "../../node_modules/react-dom/lib/isTextInputElement.js",
+        "../../node_modules/react-dom/lib/quoteAttributeValueForBrowser.js",
+        "../../node_modules/react-dom/lib/reactProdInvariant.js",
+        "../../node_modules/react-dom/lib/renderSubtreeIntoContainer.js",
+        "../../node_modules/react-dom/lib/setInnerHTML.js",
+        "../../node_modules/react-dom/lib/setTextContent.js",
+        "../../node_modules/react-dom/lib/shouldUpdateReactComponent.js",
+        "../../node_modules/react-dom/lib/traverseAllChildren.js"
+      ],
+      "size": 47718,
+      "hash": "38a6975540caa0156886a92323a43231",
+      "id": 14
     }
   ]
 }

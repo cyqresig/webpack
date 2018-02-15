@@ -2,7 +2,7 @@
 # example.js
 
 ``` javascript
-var Worker = require("worker-loader!./worker");
+var Worker = require("worker-loader?name=hash.worker.js!./worker");
 var worker = new Worker;
 worker.postMessage("b");
 worker.onmessage = function(event) {
@@ -21,7 +21,7 @@ onmessage = function(event) {
 }
 ```
 
-# js/output.js
+# dist/output.js
 
 <details><summary><code>/******/ (function(modules) { /* webpackBootstrap */ })</code></summary>
 
@@ -90,7 +90,8 @@ onmessage = function(event) {
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "js/";
+/******/ 	__webpack_require__.p = "dist/";
+/******/
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 1);
@@ -103,14 +104,14 @@ onmessage = function(event) {
 ``` javascript
 /******/ ([
 /* 0 */
-/*!********************************************************!*\
-  !*** (webpack)/node_modules/worker-loader!./worker.js ***!
-  \********************************************************/
+/*!****************************************************************************************!*\
+  !*** (webpack)/node_modules/worker-loader/dist/cjs.js?name=hash.worker.js!./worker.js ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = function() {
-	return new Worker(__webpack_require__.p + "hash.worker.js");
+  return new Worker(__webpack_require__.p + "hash.worker.js");
 };
 
 /***/ }),
@@ -121,7 +122,7 @@ module.exports = function() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Worker = __webpack_require__(/*! worker-loader!./worker */ 0);
+var Worker = __webpack_require__(/*! worker-loader?name=hash.worker.js!./worker */ 0);
 var worker = new Worker;
 worker.postMessage("b");
 worker.onmessage = function(event) {
@@ -133,11 +134,11 @@ worker.onmessage = function(event) {
 /******/ ]);
 ```
 
-# js/[hash].worker.js
+# dist/[hash].worker.js
 
 ``` javascript
 /******/ (function(modules) { // webpackBootstrap
-/******/ 	self["webpackChunk"] = function webpackChunkCallback(chunkIds, moreModules) {
+/******/ 	window["webpackChunk"] = function webpackChunkCallback(chunkIds, moreModules) {
 /******/ 		for(var moduleId in moreModules) {
 /******/ 			modules[moduleId] = moreModules[moduleId];
 /******/ 		}
@@ -226,7 +227,8 @@ worker.onmessage = function(event) {
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "js/";
+/******/ 	__webpack_require__.p = "dist/";
+/******/
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 0);
@@ -242,9 +244,9 @@ worker.onmessage = function(event) {
 
 onmessage = function(event) {
 	var template = event.data;
-	__webpack_require__.e/* require */(0).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ../require.context/templates */ 1)("./" + event.data)]; ((function(tmpl) {
+	__webpack_require__.e(/*! AMD require */ 0).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(1)("./" + event.data)]; (function(tmpl) {
 		postMessage(tmpl());
-	}).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}).catch(__webpack_require__.oe);
+	}).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__);}).catch(__webpack_require__.oe);
 }
 
 
@@ -252,10 +254,10 @@ onmessage = function(event) {
 /******/ ]);
 ```
 
-# js/0.[hash].worker.js
+# dist/0.[hash].worker.js
 
 ``` javascript
-self["webpackChunk"]([0],[
+window["webpackChunk"]([0],[
 /* 0 */,
 /* 1 */
 /*!**************************************************!*\
@@ -281,8 +283,11 @@ function webpackContext(req) {
 }
 function webpackContextResolve(req) {
 	var id = map[req];
-	if(!(id + 1)) // check for number or string
-		throw new Error("Cannot find module '" + req + "'.");
+	if(!(id + 1)) { // check for number or string
+		var e = new Error('Cannot find module "' + req + '".');
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
 	return id;
 }
 webpackContext.keys = function webpackContextKeys() {
@@ -338,24 +343,24 @@ module.exports = function() {
 
 ```
 Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack next
+Version: webpack 4.0.0-beta.1
            Asset      Size  Chunks             Chunk Names
-0.hash.worker.js  1.77 KiB          [emitted]  
-  hash.worker.js  4.04 KiB          [emitted]  
-       output.js  3.34 KiB       0  [emitted]  main
+0.hash.worker.js  1.82 KiB          [emitted]  
+  hash.worker.js  4.02 KiB          [emitted]  
+       output.js  3.46 KiB       0  [emitted]  main
 Entrypoint main = output.js
-chunk    {0} output.js (main) 311 bytes [entry] [rendered]
-    > main [1] ./example.js 
-    [0] (webpack)/node_modules/worker-loader!./worker.js 96 bytes {0} [not cacheable] [built]
-        cjs require worker-loader!./worker [1] ./example.js 1:13-46
-    [1] ./example.js 215 bytes {0} [built]
+chunk    {0} output.js (main) 326 bytes [entry] [rendered]
+    > .\example.js main
+    [0] (webpack)/node_modules/worker-loader/dist/cjs.js?name=hash.worker.js!./worker.js 97 bytes {0} [not cacheable] [built]
+        cjs require worker-loader?name=hash.worker.js!./worker [1] ./example.js 1:13-66
+    [1] ./example.js 229 bytes {0} [built]
         single entry .\example.js  main
 Child worker:
                Asset      Size  Chunks             Chunk Names
-    0.hash.worker.js  1.77 KiB       0  [emitted]  
-      hash.worker.js  4.04 KiB       1  [emitted]  main
+    0.hash.worker.js  1.82 KiB       0  [emitted]  
+      hash.worker.js  4.02 KiB       1  [emitted]  main
     Entrypoint main = hash.worker.js
-    chunk    {0} 0.hash.worker.js 463 bytes {1} [rendered]
+    chunk    {0} 0.hash.worker.js 463 bytes <{1}> [rendered]
         > [0] ./worker.js 3:1-5:3
         [1] ../require.context/templates sync ^\.\/.*$ 217 bytes {0} [built]
             amd require context ../require.context/templates [0] ./worker.js 3:1-5:3
@@ -368,8 +373,8 @@ Child worker:
         [4] ../require.context/templates/a.js 82 bytes {0} [optional] [built]
             context element ./a.js [1] ../require.context/templates sync ^\.\/.*$ ./a.js
             context element ./a [1] ../require.context/templates sync ^\.\/.*$ ./a
-    chunk    {1} hash.worker.js (main) 168 bytes [entry] [rendered]
-        > main [0] ./worker.js 
+    chunk    {1} hash.worker.js (main) 168 bytes >{0}< [entry] [rendered]
+        > !!.\worker.js main
         [0] ./worker.js 168 bytes {1} [built]
             single entry !!.\worker.js  main
 ```
@@ -378,24 +383,24 @@ Child worker:
 
 ```
 Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack next
+Version: webpack 4.0.0-beta.1
            Asset       Size  Chunks             Chunk Names
-0.hash.worker.js  557 bytes          [emitted]  
-  hash.worker.js  915 bytes          [emitted]  
-       output.js  695 bytes       0  [emitted]  main
+0.hash.worker.js  594 bytes          [emitted]  
+  hash.worker.js  919 bytes          [emitted]  
+       output.js  697 bytes       0  [emitted]  main
 Entrypoint main = output.js
-chunk    {0} output.js (main) 311 bytes [entry] [rendered]
-    > main [1] ./example.js 
-    [0] (webpack)/node_modules/worker-loader!./worker.js 96 bytes {0} [not cacheable] [built]
-        cjs require worker-loader!./worker [1] ./example.js 1:13-46
-    [1] ./example.js 215 bytes {0} [built]
+chunk    {0} output.js (main) 326 bytes [entry] [rendered]
+    > .\example.js main
+    [0] (webpack)/node_modules/worker-loader/dist/cjs.js?name=hash.worker.js!./worker.js 97 bytes {0} [not cacheable] [built]
+        cjs require worker-loader?name=hash.worker.js!./worker [1] ./example.js 1:13-66
+    [1] ./example.js 229 bytes {0} [built]
         single entry .\example.js  main
 Child worker:
                Asset       Size  Chunks             Chunk Names
-    0.hash.worker.js  557 bytes       0  [emitted]  
-      hash.worker.js  915 bytes       1  [emitted]  main
+    0.hash.worker.js  594 bytes       0  [emitted]  
+      hash.worker.js  919 bytes       1  [emitted]  main
     Entrypoint main = hash.worker.js
-    chunk    {0} 0.hash.worker.js 463 bytes {1} [rendered]
+    chunk    {0} 0.hash.worker.js 463 bytes <{1}> [rendered]
         > [0] ./worker.js 3:1-5:3
         [1] ../require.context/templates sync ^\.\/.*$ 217 bytes {0} [built]
             amd require context ../require.context/templates [0] ./worker.js 3:1-5:3
@@ -408,8 +413,8 @@ Child worker:
         [4] ../require.context/templates/a.js 82 bytes {0} [optional] [built]
             context element ./a.js [1] ../require.context/templates sync ^\.\/.*$ ./a.js
             context element ./a [1] ../require.context/templates sync ^\.\/.*$ ./a
-    chunk    {1} hash.worker.js (main) 168 bytes [entry] [rendered]
-        > main [0] ./worker.js 
+    chunk    {1} hash.worker.js (main) 168 bytes >{0}< [entry] [rendered]
+        > !!.\worker.js main
         [0] ./worker.js 168 bytes {1} [built]
             single entry !!.\worker.js  main
 ```
